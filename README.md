@@ -2,30 +2,21 @@
 
 ## Project Background
 This project leverages a realistic, multi‑table synthetic dataset designed to replicate the analytics environment of a modern e‑commerce company. The dataset simulates customers, products, marketing campaigns, user interaction events, and purchase transactions, providing a rich foundation for end‑to‑end Business Intelligence and Data Science practice.
-.
 
 **Insights and recommendations focus on the following key analytical areas:**
 
-- **Category 1 Historical Sales Performance:**
-Comprehensive evaluation of historical sales behavior across orders, sellers, states, and product categories to identify trends and seasonal patterns.
+- **Category 1 Funnel & Behavioral Analytics:**  
+Comprehensive evaluation of user progression through funnel stages to identify conversion rates, drop-offs, and traffic source impact.
 
-- **Category 2 Sellers and Category Performance:** 
-In-depth analysis of sellers and category performance to determine which categories drive the highest sales for both individual sellers and the company overall.
+- **Category 2 Campaign Performance:**  
+In-depth analysis of marketing campaigns to measure revenue impact, conversion lift, discount effects, and overall profitability.
 
-- **Category 3 Customer Behavior and Segmentation:**
-Detailed customer analysis aimed at understanding purchasing behavior, identifying customer segments, and evaluating how each segment contributes to total sales.
+- **Category 3 A/B Testing Outcomes:**  
+Descriptive comparison of control vs. treatment groups to assess conversion, AOV differences, and segment-level uplift.
 
-- **Category 4 Geographic Sales Distribution:**
-Assessment of sales performance across states and cities, including identification of top-performing sellers and regions with growth opportunities.
+- **Category 4 Customer & Product Performance:**  
+Assessment of customer segments, loyalty tiers, and product-level results to highlight revenue drivers and margin risks.
 
-- **Category 5 Review Score and Service Quality Analysis:**
-Examination of review scores across categories and sellers to uncover service issues, category logistics problems, and improvement opportunities.
-
-- **Category 6 Order payments type Analysis:**
-Detailed analysis of payment type and number of installments per order value, state, sellers and categories
-
-- **Category 7 Strategic Recommendations:** 
-Development of data-driven guidance to support business decisions aimed at enhancing customer satisfaction, strengthening seller engagement, and increasing overall sales performance.
 
 
 The python code to make exploratory analysis and cleaning the data can be found here:  
