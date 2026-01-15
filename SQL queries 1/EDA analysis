@@ -1,0 +1,439 @@
+====================
+--Exploratory Analysis
+--====================
+
+--Explore all objects in the Database
+SELECT * FROM INFORMATION_SCHEMA.TABLES
+
+--Explore all columns in the tables
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+
+--Find the earliest and the latest order
+--How many months of orders are available
+
+SELECT 
+    MIN(timestamp) AS EarliestOrder,
+    MAX(timestamp) AS LatestOrder,
+    DATEDIFF(MONTH,MIN(timestamp),MAX(timestamp)) AS Date_Diff_Months
+FROM [events ]
+
+
+-- Count rows in each table
+SELECT 'customers' AS TableName, COUNT(*) AS Row_Count FROM customers
+UNION ALL
+SELECT 'products', COUNT(*) FROM products
+UNION ALL
+SELECT 'campaigns', COUNT(*) FROM campaigns
+UNION ALL
+SELECT 'events', COUNT(*) FROM events
+UNION ALL
+SELECT 'transactions', COUNT(*) FROM transactions;
+
+--=========================================
+-- Ensure data integrity across all columns
+--=========================================
+
+--===============
+-- Products table
+--===============
+
+-- Check for mispelling values in category and nr. products per category
+SELECT 
+	category,
+	COUNT(*) AS Nrproducts
+FROM products
+GROUP BY category
+ORDER BY Nrproducts ASC
+
+--No misspellings detected in category values
+
+-- Check for mispelling values in brand and nr. products per brand
+SELECT
+	brand, 
+	COUNT(*) AS Nrproducts
+FROM products
+GROUP BY brand
+ORDER BY Nrproducts ASC
+
+--No misspellings detected in category values
+
+--===============
+--Customers table
+--===============
+
+-- Check for mispelling values in gender and nr. customers per gender
+
+SELECT 
+	gender,
+	COUNT(*) AS Nrcustomers
+FROM [customers ]
+GROUP BY gender
+ORDER BY Nrcustomers ASC
+
+-- Check for mispelling values in country and nr. customers per country
+
+SELECT 
+	country,
+	COUNT(*) AS NrCustomers
+FROM [customers ]
+GROUP BY country
+ORDER BY NrCustomers ASC
+
+-- Check for mispelling values in loyalty_tier and nr. customers per loyalty tier
+
+SELECT 
+	loyalty_tier,
+	COUNT(*) AS NrCustomers
+FROM [customers ]
+GROUP BY loyalty_tier
+ORDER BY NrCustomers ASC
+
+-- Check for mispelling values in loyalty_tier and nr. customers per acquisition_channel
+
+SELECT 
+	acquisition_channel,
+	COUNT(*) AS NrCustomers
+FROM [customers ]
+GROUP BY acquisition_channel
+ORDER BY NrCustomers ASC
+
+--============
+--Events table
+--============
+
+-- Check for mispelling values in event_type and nr. events per event_type
+
+SELECT 
+	event_type,
+	COUNT(*) AS NrEvents
+FROM [events ]
+GROUP BY event_type
+ORDER BY NrEvents ASC
+
+-- Check for mispelling values in device_type and nr. events per device_type
+
+SELECT 
+	device_type,
+	COUNT(*) AS NrEvents
+FROM [events ]
+GROUP BY device_type
+ORDER BY NrEvents ASC
+
+-- Check for mispelling values in traffic_source and nr. events per traffic source
+
+SELECT 
+	traffic_source,
+	COUNT(*) AS NrEvents
+FROM [events ]
+GROUP BY traffic_source
+ORDER BY NrEvents ASC
+
+
+-- Check for mispelling values in page_category and nr. events per page_category
+
+SELECT 
+	page_category,
+	COUNT(*) AS NrEvents
+FROM [events ]
+GROUP BY page_category
+ORDER BY NrEvents ASC
+
+-- Check for mispelling values in experiment_group and nr. events per experiment_group
+
+SELECT 
+	experiment_group,
+	COUNT(*) AS NrEvents
+FROM [events ]
+GROUP BY experiment_group
+ORDER BY NrEvents ASC
+
+SELECT *
+FROM [events ]
+
+--==============
+--Campaigns table
+--==============
+
+-- Check for mispelling values in channel and nr.campaigns per channel
+ 
+ SELECT 
+	channel,
+	COUNT(*) AS Nrcampaigns
+FROM campaigns
+GROUP BY channel
+ORDER BY Nrcampaigns ASC
+
+-- Check for mispelling values in objective and nr.campaigns per objective
+
+ SELECT 
+	objective,
+	COUNT(*) AS Nrcampaigns
+FROM campaigns
+GROUP BY objective
+ORDER BY Nrcampaigns ASC
+
+-- Check for mispelling values in target_segment and nr.campaigns per target_segments
+
+ SELECT 
+	target_segment,
+	COUNT(*) AS Nrcampaigns
+FROM campaigns
+GROUP BY target_segment
+ORDER BY Nrcampaigns ASC
+
+--=====================
+-- MEASURES EXPLORATION
+--=====================
+
+--Total Revenue
+SELECT 
+    ROUND(SUM(gross_revenue),0) AS TotalSales
+FROM transactions 
+
+--Quantity of purchases
+SELECT 
+    COUNT (transaction_id) AS [Quantity of Orders]
+FROM transactions
+
+--Average order value (AOV)
+
+SELECT ROUND(AVG(gross_revenue),1) AS AOV
+FROM transactions;
+
+-- Since gross_revenue is already stored at the transaction level, no aggregation is required
+
+
+--Total Number of products
+
+SELECT 
+    COUNT (*) AS NumberofProducts
+FROM Products
+
+--Number of Customers
+
+SELECT 
+    COUNT(DISTINCT(customer_id)) AS TotalNumberofCustomers
+FROM [customers ]
+
+-- Number of Countries
+
+SELECT 
+    COUNT(DISTINCT country) AS Nrcountries
+FROM [customers ]
+
+
+--Avg age
+
+SELECT
+   AVG(age) AS avg_age
+FROM [customers ]
+
+--Count of events
+
+SELECT COUNT(*) AS NrEvents
+FROM [events ]
+
+-- Number of campaigns
+SELECT
+    COUNT(DISTINCT campaign_id) AS NrCampaigns
+FROM [events ]
+
+-- Number of sessions
+SELECT
+    COUNT(DISTINCT session_id) AS NrSessions
+FROM [events ]
+
+-- Avg session duration
+SELECT
+    AVG(session_duration_sec) AS [Avg Session Duration]
+FROM [events ]
+
+
+--=====================
+-- GENERATE A REPORT
+--=====================
+
+SELECT 
+    'Total Sales' AS Measure_name,
+    ROUND(SUM(gross_revenue),0) AS Measure_value
+FROM transactions
+
+UNION ALL
+
+SELECT 
+    'Quantity of Orders',
+    COUNT(transaction_id) AS Measure_value
+FROM transactions
+
+UNION ALL
+
+SELECT 
+    'AOV',
+    ROUND(AVG(gross_revenue),1) AS Measure_value
+FROM transactions
+
+UNION ALL
+
+SELECT 
+    'Nr. Of Products',
+    COUNT(*) AS Measure_value
+FROM products
+
+UNION ALL
+
+SELECT 
+    'Nr. Of Customers',
+    COUNT(DISTINCT customer_id) AS Measure_value
+FROM customers
+
+UNION ALL
+
+SELECT 
+    'Nr. Of Countries',
+    COUNT(DISTINCT country) AS Measure_value
+FROM customers
+
+UNION ALL
+
+SELECT 
+    'Avg Age',
+    ROUND(AVG(age),1) AS Measure_value
+FROM customers
+
+UNION ALL
+
+SELECT 
+    'Nr. Of Events',
+    COUNT(*) AS Measure_value
+FROM events
+
+UNION ALL
+
+SELECT 
+    'Nr. Of Campaigns',
+    COUNT(DISTINCT campaign_id) AS Measure_value
+FROM events
+
+UNION ALL
+
+SELECT 
+    'Nr. Of Sessions',
+    COUNT(DISTINCT session_id) AS Measure_value
+FROM events
+
+UNION ALL
+
+SELECT 
+    'Avg Session Duration',
+    ROUND(AVG(session_duration_sec),1) AS Measure_value
+FROM events;
+
+--=====================
+-- MEASURES EXPLORATION
+--=====================
+
+-- Avg expected uplift by objective
+
+SELECT 
+    objective,
+    AVG(expected_uplift) AS Avg_exp_uplift
+FROM campaigns
+GROUP BY objective
+ORDER BY Avg_exp_uplift DESC
+
+-- Retention campaign is the most effective one, with near to 10% of expected uplift
+
+-- Avg expected uplift by target_segment
+
+SELECT 
+    target_segment,
+    AVG(expected_uplift) AS Avg_exp_uplift
+FROM campaigns
+GROUP BY target_segment
+ORDER BY Avg_exp_uplift DESC
+
+-- When the campaign focuses on all customers, it turns out to have more expected uplift
+
+-- Brief understanding of how users move through the funnel 
+SELECT
+    event_type,
+    COUNT(*) AS NrEvents
+FROM events
+GROUP BY event_type
+
+
+SELECT 
+    experiment_group,
+    AVG(conversion_flag) AS ConversionRate
+FROM events
+GROUP BY experiment_group
+
+
+--Which channel campaing generates most revenue
+SELECT 
+    channel,
+    SUM(t.gross_revenue) AS Revenue
+FROM campaigns c
+INNER JOIN transactions t
+ON c.campaign_id = t.campaign_id
+GROUP BY channel
+ORDER BY Revenue DESC
+
+--Which campaing generates most revenue
+
+SELECT 
+    c.campaign_id,
+    SUM(t.gross_revenue) AS Revenue
+FROM campaigns c
+INNER JOIN transactions t
+ON c.campaign_id = t.campaign_id
+GROUP BY c.campaign_id
+ORDER BY Revenue DESC
+
+--Revenue by loyalty tier
+
+SELECT  
+    c.loyalty_tier,
+    SUM(t.gross_revenue) AS Revenue
+FROM [customers ] c
+LEFT JOIN transactions t
+ON c.customer_id = t.customer_id
+GROUP BY c.loyalty_tier
+ORDER BY Revenue DESC
+
+
+SELECT 
+    *
+FROM transactions
+
+-- Discount impact on AOV
+SELECT 
+    discount_applied,
+    ROUND(AVG(gross_revenue),1) AS AOV
+FROM transactions
+GROUP BY discount_applied
+ORDER BY AOV DESC
+
+-- Funnel conversion: add_to_cart → purchase
+WITH funnel AS
+(SELECT
+    SUM(CASE WHEN event_type = 'add_to_cart' THEN 1 ELSE 0 END) AS [Add to cart events],
+    SUM(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0 END) AS [Purchase Events]
+FROM [events ]
+)
+SELECT 
+    *,
+   ROUND(([Purchase Events] * 1.0/ [Add to cart events]) * 100,2) AS Conversion_rate_percentage
+FROM funnel
+
+-- Funnel conversion by traffic source
+SELECT 
+    traffic_source,
+    SUM(CASE WHEN event_type = 'add_to_cart' THEN 1 ELSE 0 END) AS AddToCartEvents,
+    SUM(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0 END) AS PurchaseEvents,
+    ROUND( (SUM(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0 END) * 1.0 /
+           SUM(CASE WHEN event_type = 'add_to_cart' THEN 1 ELSE 0 END) * 100),2) AS ConversionRate_Percent
+FROM events
+GROUP BY traffic_source
+ORDER BY ConversionRate_Percent DESC
+
