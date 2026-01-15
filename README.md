@@ -20,7 +20,7 @@ Assessment of customer segments, loyalty tiers, and product-level results to hig
 
 
 The python code to make exploratory analysis and cleaning the data can be found here:  
-[Python Cleaning and Exploration Code](https://github.com/Emma922/Olist-Project/blob/302c4819153578439040c44af7a7dab13978ef14/Olist_EDA_cleaning.ipynb)
+[Python Cleaning and Exploration Code](https://github.com/Emma922/Marketing-E-Commerce-Analysis/blob/main/Marketing_%26_E_Commerce_EDA_cleaning.ipynb)
 
 Targeted SQL queries for various business questions can be found here:  
 [SQL Business Questions Queries](https://github.com/Emma922/Olist-Project/tree/ab7fa770a9f45d0e2c80d9a230c366801487e88e/SQL%20queries)
