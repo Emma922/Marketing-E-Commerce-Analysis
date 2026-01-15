@@ -1,9 +1,8 @@
-# Olist Data Analysis Project
+# Marketing & E-Commerce Project
 
 ## Project Background
-
-Olist founded in 2015 is the largest department store in Brazilian marketplaces, it connects small business and allows sellers offer their products while Olist is in charge of logistics.
-This project analyzes sales from 2016 - 2018. The company has significant amount of records (100k) in orders, customers, sellers, products, locations and payments details. This project throughly analyzes and sythezises the data in order to obtain meaningful insights that will lead to improve performance in sales and different areas of the company.
+This project leverages a realistic, multi‑table synthetic dataset designed to replicate the analytics environment of a modern e‑commerce company. The dataset simulates customers, products, marketing campaigns, user interaction events, and purchase transactions, providing a rich foundation for end‑to‑end Business Intelligence and Data Science practice.
+.
 
 **Insights and recommendations focus on the following key analytical areas:**
 
