@@ -6,7 +6,7 @@ This project leverages a realistic, multi‑table synthetic dataset designed to 
 **Insights and recommendations focus on the following key analytical areas:**
 
 - **Category 1 Funnel & Behavioral Analytics:**  
-Comprehensive evaluation of user progression through funnel stages to identify conversion rates, drop-offs, and traffic source impact.
+Comprehensive evaluation of user progression through funnel stages to identify conversion rates, drop-offs, traffic source, and device type impact.
 
 - **Category 2 Campaign Performance:**  
 In-depth analysis of marketing campaigns to measure revenue impact, conversion lift, discount effects, and overall profitability.
