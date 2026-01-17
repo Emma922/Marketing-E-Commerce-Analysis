@@ -25,10 +25,6 @@ The python code to make exploratory analysis and cleaning the data can be found 
 Targeted SQL queries for various business questions can be found here:  
 [SQL Business Questions Queries](https://github.com/Emma922/Marketing-E-Commerce-Analysis/tree/main/SQL%20queries%201)
 
-Olist Dataset:
-![Olist Dataset](https://github.com/user-attachments/assets/16cada77-7551-48b8-bac7-af613f819bec)
-
-
 
 Interactive Tableau dashboards for business perormance analysis are available here:  
 - [Marketing & E-Commerce Dashboard](https://public.tableau.com/app/profile/emmanuel.casta.o/viz/Olist_17646411959020/Dashboard1)
