@@ -1,3 +1,4 @@
+
 # Marketing & E-Commerce Project
 
 ## Project Background
@@ -34,29 +35,41 @@ Interactive Tableau dashboards for business perormance analysis are available he
 
 ### Overview of Findings
 
-The analysis shows clear funnel drop‑offs, with desktop and paid search driving stronger conversions. Retention campaigns deliver the highest uplift, while heavy discounts reduce average order value. A/B testing confirms Variant B outperforms control and Variant A. Revenue follows a Pareto pattern, with a few channels and product categories contributing most. Customer loyalty remains weak, highlighting opportunities for retention strategies.
+The analysis shows higher conversion rate (68%) from 'Add to cart' to 'Purchase'. Mobile and Email driving stronger conversions. Retention campaigns deliver the highest uplift, while heavy discounts reduce average order value. A/B testing confirms Variant B outperforms control and Variant A. All and New Customers target segments produce the highest Avg Expected Uplift, while Churn Risk is the lowest. Bronze tier customers contribute the majority of revenue, suggesting opportunities for upsell and improvements in the loyalty program improvements.
 
 Key insights include:
 
-- It is observed that there is consistent sales growth per year, while no seasonality patterns are demonstrated 
-- Category and seller sales follow the Pareto rule
-- More than 50% of sellers contribute only 5% revenue, which suggests that many sellers might be inactive
-- Only 7 out of 75 categories comprise almost 50% of total sales
-- Olist lacks customer loyalty. Based on the RFM analysis, customers who contribute most  to the sales did not make additional purchases
-- Outperforming states show lower freight values, while underperforming states tend to have higher freight values. This indicates that shipping cost strongly influences purchasing behavior.
-- There are certain issues related to logistics. Even a few of the highest-performing products show complaints. Additionally, there is a significant quantity of low-quality review sellers who have sold a considerable amount of products.
-- Customer financing preferences depend on the type of goods, particularly for expensive or long-term items.
+-Conversion rate from Add to Cart to Purchase: 68%
 
-### Based on these findings, Olist would benefit from:
+-Email traffic source shows the highest conversion rate (70%), followed by Paid Search (68%)
 
-- Leverage company growth through marketing ads across Brazil to sustain momentum and expand reach.
-- Sellers-focused campaigns to encourage sales activity, providing training, incentives or
-promotional tools to activate inactive sellers.
-- Marketing campaigns focused on outperforming products and categories
-- Balance freight values for underperforming states to encourage sales in these places
-- Watch out for logistics and seller complaints by strengthening quality control, improving delivery reliablity, and monitoring seller performance.
-- Take advantage of customer financing preferences through targeted marketing and financial strategies
-- Implement customer engagement programs to increase repeat purchases.
+-Mobile is the most effective device type (55%), ahead of Desktop (47%) and Tablet (38%)
+
+-Retention campaigns deliver the highest expected uplift (~10%)
+
+-Targeting all customers yields stronger average uplift than narrow segments, showing broad campaigns can be impactful
+
+-Affiliate and Paid Search campaigns combine strong uplift with high revenue, making them the most profitable channels
+
+-Variant B performs best, with a conversion rate of 44% compared to 37% (Variant A) and 33% (Control)
+
+-Organic and Paid Search channels bring in the most profitable customers
+
+-Bronze-tier customers contribute the majority of revenue, highlighting upsell and loyalty program opportunities
+
+### Based on these findings, The company would benefit from:
+
+-Strengthening loyalty programs to move Bronze-tier customers into higher tiers and increase lifetime value.
+
+-Scaling retention campaigns, which show the strongest uplift, to reduce churn and re‑engage existing customers.
+
+-Optimizing mobile and email strategies, since they drive the highest conversion rates.
+
+-Leveraging Affiliate and Paid Search channels, which combine strong uplift with high revenue, to maximize profitability.
+
+-Expanding broad targeting campaigns, as they deliver higher average uplift than narrow segmentation.
+
+-Refining discount strategies, reducing reliance on heavy discounts to protect average order value.
 
 ---
 
