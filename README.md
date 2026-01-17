@@ -108,6 +108,9 @@ Lower discound, higher revenue and orders, being 0 discount the better performin
 - There are no surprises in campaing ratio between 'discounted and non discounted orders'. 
 Almost every campaing following a 60%-80% ratio.
 
+![Campaign Performance](https://github.com/user-attachments/assets/f6076dc5-9578-49ce-a86f-a9156f9c9fb9)
+
+
 ### Category 3 A/B Testing Outcomes
 
 - Variant B is the clear winner, with a conversion rate of 44% compared to 37% (Variant A) and 33% (Control).
