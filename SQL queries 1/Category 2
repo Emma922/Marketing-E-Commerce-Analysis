@@ -1,0 +1,127 @@
+--===============================================================================================================================
+/* Category 2 Campaign Performance:
+In-depth analysis of marketing campaigns to measure revenue impact, conversion lift, discount effects, and overall profitability.
+*/--=============================================================================================================================
+
+-- Revenue by campaign channel
+SELECT 
+    c.channel,
+    SUM(t.gross_revenue) AS Revenue
+FROM campaigns c
+JOIN transactions t 
+    ON c.campaign_id = t.campaign_id
+GROUP BY c.channel
+ORDER BY Revenue DESC;
+
+-- Revenue by individual campaign
+SELECT 
+    c.campaign_id,
+    c.objective,
+    SUM(t.gross_revenue) AS Revenue
+FROM campaigns c
+JOIN transactions t 
+    ON c.campaign_id = t.campaign_id
+GROUP BY c.campaign_id, c.objective
+ORDER BY Revenue DESC;
+
+--Avg Expected Uplift by Campaign Objective
+SELECT 
+    objective,
+    ROUND(AVG(expected_uplift),3) AS AvgExpectedUplift
+FROM campaigns
+GROUP BY objective
+ORDER BY AvgExpectedUplift DESC;
+
+-- Avg Expected Uplift by Target Segment
+
+SELECT 
+    target_segment,
+    ROUND(AVG(expected_uplift),3) AS AvgExpectedUplift
+FROM campaigns
+GROUP BY target_segment
+ORDER BY AvgExpectedUplift DESC;
+
+-- Avg Expected Uplift by Channel
+
+SELECT 
+    channel,
+    ROUND(AVG(expected_uplift),3) AS AvgExpectedUplift
+FROM campaigns
+GROUP BY channel
+ORDER BY AvgExpectedUplift DESC;
+
+-- Revenue vs Expected Uplift
+
+SELECT 
+    c.campaign_id,
+    c.channel,
+    c.objective,
+    ROUND(AVG(c.expected_uplift),2) AS AvgExpectedUplift,
+    SUM(t.gross_revenue) AS Revenue
+FROM campaigns c
+LEFT JOIN transactions t 
+    ON c.campaign_id = t.campaign_id
+GROUP BY c.campaign_id, c.channel, c.objective
+ORDER BY AvgExpectedUplift DESC, Revenue DESC;
+
+
+--=================
+-- Discount effects
+--=================
+
+--AOV With vs Without Discount
+SELECT 
+    discount_applied,
+    ROUND(AVG(gross_revenue),2) AS AOV
+FROM transactions
+GROUP BY discount_applied;
+
+
+-- Revenue Contribution By Discount Status
+SELECT 
+    discount_applied,
+    SUM(gross_revenue) AS TotalRevenue,
+    COUNT(transaction_id) AS Orders
+FROM transactions
+GROUP BY discount_applied
+ORDER BY TotalRevenue DESC
+
+-- Campaign Performance With Discoutns
+WITH main_query AS
+(SELECT 
+    c.campaign_id,
+    c.channel,
+    ROUND(AVG(t.gross_revenue),2) AS AvgOrderValue,
+    SUM(t.gross_revenue) AS TotalRevenue,
+    SUM(CASE WHEN t.discount_applied != 0 THEN 1 ELSE 0 END) AS DiscountedOrders,
+    SUM(CASE WHEN t.discount_applied = 0 THEN 1 ELSE 0 END) AS NonDiscountedOrders
+FROM campaigns c
+JOIN transactions t 
+    ON c.campaign_id = t.campaign_id
+GROUP BY c.campaign_id, c.channel)
+SELECT 
+    *,
+    (DiscountedOrders * 1.0/ NonDiscountedOrders) * 100 AS Ratio 
+FROM main_query
+ORDER BY TotalRevenue DESC
+
+SELECT *
+FROM transactions
+
+/*
+Insights:
+
+Retention campaigns show the highest expected uplift (~10%), confirming their effectiveness in re‑engaging customers.
+
+Targeting all customers yields stronger average uplift than narrow segments, suggesting broad campaigns can be impactful.
+
+Affiliate and Paid Search campaigns combine strong uplift with high revenue, making them the most profitable channels.
+
+Churn risk shows the lowest Avg Expected Uplift, making this segment less principal than All and New Customer segments.
+
+Discount applied exhibits a proportional inverse relationship with Total Revenue and Orders.
+Lower discound, higher revenue and orders, being 0 discount the better performing.
+
+There are no surprises in campaing ratio between 'discounted and non discounted orders'. 
+Almost every campaing following a 60%-80% ratio.*/
+
