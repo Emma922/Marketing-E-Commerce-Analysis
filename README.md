@@ -119,10 +119,6 @@ Revenue per campaing (For more details please visit the dashboard in tableau)
 
 - The findings validate Variant B as the most effective treatment, offering a straightforward recommendation to adopt Variant B across campaigns.
 
-- Nr. Orders per Customer Viz
-  
-- This chart shows the dominance of single-purchase customers, which suggests low repeat purchase rates
-
 
 ![Convertion rate per variant](https://github.com/user-attachments/assets/7bd83755-a21c-4fe9-b197-72077022fd06)
 
@@ -146,11 +142,10 @@ This imbalance means the effectiveness of discounts cannot be fairly evaluated, 
 
 Based on the analysis, the following actions are recommended to the stakeholder team:
 
-- **Company growth:** Leverage company growth through marketing strategies across Brazil to sustain momentum and expand reach.
-- **Seller campaigns:** Sellers-focused campaigns to encourage sales activity, providing training, incentives or
-promotional tools to activate inactive sellers.
-- **Marketing campaigns:** Marketing campaigns focused on outperforming products and categories
-- **Underperforming teams:** Balance freight values for underperforming states to encourage sales in these places
-- **Logistic and seller complaints:** Watch out for logistics and seller complaints by strengthening quality control, improving delivery reliablity, and monitoring seller performance.
-- **Customer preferences:** Take advantage of customer financing preferences through targeted marketing and financial strategies
-- **Customer loyalty and engagement:** Implement customer engagement programs to increase loyalty and repeat purchases
+- **Strengthen loyalty programs:** Bronze‑tier customers generate most of the revenue, but higher tiers lag. Upselling and exclusive benefits could increase lifetime value and rebalance the loyalty structure.
+- **Scale retention campaigns:** With the highest uplift (~10%), retention initiatives are proven effective. Expanding these campaigns can reduce churn and re‑engage existing customers.
+- **Optimize mobile and email strategies:** Mobile devices and email traffic show the strongest conversion rates. Prioritizing mobile UX improvements and targeted email marketing will maximize these strengths.
+- **Favor broad targeting approaches:** Campaigns aimed at All Customers and New Customers outperform narrow segments. Broad targeting should be emphasized to capture wider uplift potential.
+- **Adopt Variant B across campaigns:** A/B testing confirms Variant B delivers the highest conversion rate. Standardizing this variant will improve efficiency across marketing efforts.
+- **Reassess referral strategies:** Referral campaigns underperform in revenue contribution. Revisiting incentives or reallocating resources could improve efficiency.
+- **Focus on high‑AOV categories:** Electronics and other high‑value categories should remain a priority, while strategies to improve low‑AOV categories like Grocery can diversify revenue streams.
