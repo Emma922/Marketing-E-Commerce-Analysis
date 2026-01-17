@@ -107,7 +107,7 @@ Lower discound, higher revenue and orders, being 0 discount the better performin
 - There are no surprises in campaing ratio between 'discounted and non discounted orders'. 
 Almost every campaing following a 60%-80% ratio.
 
-Revenue per campaing (for further detail please visit the tableau dashboard)
+Revenue per campaing (For more details please visit the dashboard in tableau)
 ![Campaign Performance](https://github.com/user-attachments/assets/f6076dc5-9578-49ce-a86f-a9156f9c9fb9)
 
 
@@ -124,7 +124,8 @@ Revenue per campaing (for further detail please visit the tableau dashboard)
 - This chart shows the dominance of single-purchase customers, which suggests low repeat purchase rates
 
 
-![Nr. Orders per Customer](https://github.com/user-attachments/assets/8a2627b8-65f8-49cd-aa54-08d71a6871b2)
+![Convertion rate per variant](https://github.com/user-attachments/assets/7bd83755-a21c-4fe9-b197-72077022fd06)
+
 
 ### Category 4 Customer & Product Performance:
 
@@ -139,41 +140,7 @@ Revenue per campaing (for further detail please visit the tableau dashboard)
 - Higher discount levels correlate with lower revenue. One reason may be that discounted transactions are less common compared to full‑price purchases. 
 This imbalance means the effectiveness of discounts cannot be fairly evaluated, as most revenue comes from non‑discounted sales.
 
-Sales Performance by State (to consult state details and accurate specific information please enter into the dashboard)
-
-
-![State Performance](https://github.com/user-attachments/assets/fcf24d00-c86a-41f8-8dd3-95a2bdaf5edc)
-
-### Review score and Service Quality
-
-- Several sellers show low average ratings (<3.0), suggesting operational deficiencies such as late shipments, poor handling, or inconsistent service. 
-These sellers should be monitored closely and may require training or performance improvement plans.
-
-- Delivery delays significantly reduce customer satisfaction, as evidenced by the lower average review scores for delayed orders.
-This reinforces the importance of logistics efficiency and accurate delivery-time estimates.
-
-- Categories with both high sales volume and high review scores represent strong performance areas. 
-In contrast, categories with low review scores signal opportunities for targeted service or product improvements.
-
-- Moveis_escritorio is a high-priority category for intervention because it combines low review scores with high order volume, 
-meaning a large number of customers are being negatively affected.
-
-- Cama_mesa_banho is another key category: despite being among the highest in revenue and total orders, it also shows one of the lowest average review scores. 
-This mismatch indicates a risk of long-term customer dissatisfaction in a high-impact category.
-
-- Seller 7c67e1448b00f6e969d365cea6b010ab stands out as a critical case: despite selling over 1,300 products, 
-the seller maintains the lowest average review scores, suggesting severe operational or quality-related issues.
-
-- Improving logistics reliability and monitoring low-performing sellers could significantly raise customer satisfaction across the platform.
-
-### Order payments type
-
-- High-installment sellers vary significantly across product categories. 
-
-- Categories like 'eletrodomesticos_2', 'moveis_decoracao', and 'automotivo' have the highest average installments, suggesting reliance on financing for higher-priced or durable goods.
-
-- Customer financing preferences align with product type, particularly for expensive or long-term purchase items. 
-
+![Revenue per product/categories](https://github.com/user-attachments/assets/37aa980d-93cf-49ec-920c-a2925ac0cbc1)
 
 ## Recommendations
 
