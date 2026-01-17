@@ -34,8 +34,7 @@ Interactive Tableau dashboards for business perormance analysis are available he
 
 ### Overview of Findings
 
-Olist showed steady growth month by month. The analysis indicates a strong market presence, particularly in Sao Paulo (SP), Minas Gerais (MG), and Rio de Janeiro (RJ). Additionally, a lack of customer loyalty and logistic problems are key issues that prevent Olist from developing better sales numbers. 
-Furthermore, there is observed the pareto rule in sales performance for categories and sellers, which means that Olist relies heavily on a few categories and sellers.
+The analysis shows clear funnel drop‑offs, with desktop and paid search driving stronger conversions. Retention campaigns deliver the highest uplift, while heavy discounts reduce average order value. A/B testing confirms Variant B outperforms control and Variant A. Revenue follows a Pareto pattern, with a few channels and product categories contributing most. Customer loyalty remains weak, highlighting opportunities for retention strategies.
 
 Key insights include:
 
