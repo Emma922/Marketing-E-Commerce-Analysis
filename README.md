@@ -23,7 +23,7 @@ The python code to make exploratory analysis and cleaning the data can be found 
 [Python Cleaning and Exploration Code](https://github.com/Emma922/Marketing-E-Commerce-Analysis/blob/main/Marketing_%26_E_Commerce_EDA_cleaning.ipynb)
 
 Targeted SQL queries for various business questions can be found here:  
-[SQL Business Questions Queries](https://github.com/Emma922/Olist-Project/tree/ab7fa770a9f45d0e2c80d9a230c366801487e88e/SQL%20queries)
+[SQL Business Questions Queries](https://github.com/Emma922/Marketing-E-Commerce-Analysis/tree/main/SQL%20queries%201)
 
 Olist Dataset:
 ![Olist Dataset](https://github.com/user-attachments/assets/16cada77-7551-48b8-bac7-af613f819bec)
@@ -31,9 +31,8 @@ Olist Dataset:
 
 
 Interactive Tableau dashboards for business perormance analysis are available here:  
-- [Business Performance Dashboard](https://public.tableau.com/app/profile/emmanuel.casta.o/viz/Olist_17646411959020/Dashboard1)
-<img width="1459" height="1279" alt="Dashboard 1 (6)" src="https://github.com/user-attachments/assets/0ee35a44-7548-4693-a773-0db74235fb3d" />
-
+- [Marketing & E-Commerce Dashboard](https://public.tableau.com/app/profile/emmanuel.casta.o/viz/Olist_17646411959020/Dashboard1)
+<img width="1799" height="1399" alt="Dashboard 1 (11)" src="https://github.com/user-attachments/assets/c4f152e8-3bb6-4395-8462-49f912b6f4a3" />
 
 ## Executive Summary
 
