@@ -88,7 +88,6 @@ Paid Search is the second performer with 68%
 
 - Segments with lower user-based conversion rates implicitly represent higher abandonment after the add-to-cart stage
 
-
 ![Funnel Chart](https://github.com/user-attachments/assets/ff220519-ae38-4e22-afaa-96503b556aa8)
 
 
@@ -108,6 +107,7 @@ Lower discound, higher revenue and orders, being 0 discount the better performin
 - There are no surprises in campaing ratio between 'discounted and non discounted orders'. 
 Almost every campaing following a 60%-80% ratio.
 
+Revenue per campaing (for further detail please visit the tableau dashboard)
 ![Campaign Performance](https://github.com/user-attachments/assets/f6076dc5-9578-49ce-a86f-a9156f9c9fb9)
 
 
