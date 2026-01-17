@@ -75,56 +75,67 @@ Key insights include:
 
 ## Insights Deep Dive
 
-### Historical Sales Performance
+### Category 1 Funnel & Behavioral Analytics
 
-- All months show a consistent growth per year, indicating a general growth trend in sales per year.
-This suggests that Olist has been strengthening its presence in the Brazilian market over time. 
-  
-- Based on the available data, we can infer that Olist may exhibit a seasonality pattern during the first 2 quarters of the year. However, due to the limited data across full yearly cycles, 
-this conclusion cannot be confirmed with certainty. Since the dataset only extends to September 2018, we lack information on the final quarter of that year, preventing a complete comparison between first-quarter and last-quarter sales performance.
+- Conversion rate from 'Add to cart users' to 'Purchase User' 68%
 
-- The increase in sales observed during the first months of 2018 may be attributed to Olist�s overall growth rather than to a definitive seasonality pattern. 
-With the current dataset, we cannot reliably distinguish between structural growth and seasonal effects.
+- Email traffic source stands out with the highest conversion rate (70%),
+Paid Search is the second performer with 68%
+
+- Organic and Direct traffic source are the lowest effective sources with 22% and 16%.
+
+- Mobile is the most effective device type (55%), followed by desktop (47%) and tablet (38%) of conversion rate percent.
+
+- Segments with lower user-based conversion rates implicitly represent higher abandonment after the add-to-cart stage
+
 
 ![Customer Loyalty Snapshot](https://github.com/user-attachments/assets/a202a70e-f7f4-4bed-b4e2-0de7d446c750)
 
 
 
-### Products and Category Performance
+### Category 2 Campaign Performance
 
--  The data shows a strong **20–80 pattern**:
-  - Only **7 out of 75** categories account for almost **50% of total sales**.
-  - **21% of categories** represent **80% of total revenue**.
-  - **17% of sellers** generate **80% of total sales**.
-  - More than a half of sellers contribute **less than 5% of total revenue**.
-  - **The top 10** sellers have different top 5 best-selling categories overall.
-  - **The top 10** sellers generally rely heavily on one main category that generates the majority of their revenue
+- Retention campaigns show the highest expected uplift (~10%), confirming their effectiveness in re‑engaging customers.
 
+- Targeting all customers yields stronger average uplift than narrow segments, suggesting broad campaigns can be impactful.
 
-### Customer Behavior and Segmentation
+- Affiliate and Paid Search campaigns combine strong uplift with high revenue, making them the most profitable channels.
 
-- The "Best Customers" segment represents only 2% of the company's total revenue.
-- "Potential Loyal Customers" contribute approximately one-fourth of total revenue, highlighting the importance of implementing loyalty-building initiatives.
-- The "At Risk" segment accounts for nearly one-third of all customers, indicating that many previously frequent buyers are no longer generating sales.
-- These findings underscore the importance of maintaining customer relationships over time to secure consistent and recurring revenue.
-- Based on the RFM analysis, customers who contribute most  to the sales did not make additional purchases
+- Churn risk shows the lowest Avg Expected Uplift, making this segment less principal than All and New Customer segments.
 
-Nr. Orders per Customer Viz
+- Discount applied exhibits a proportional inverse relationship with Total Revenue and Orders.
+Lower discound, higher revenue and orders, being 0 discount the better performing.
+
+- There are no surprises in campaing ratio between 'discounted and non discounted orders'. 
+Almost every campaing following a 60%-80% ratio.
+
+### Category 3 A/B Testing Outcomes
+
+- Variant B is the clear winner, with a conversion rate of 44% compared to 37% (Variant A) and 33% (Control).
+
+- AOV, expected uplift, and segment-level uplift remained equal, meaning the experiment�s impact was limited to conversion efficiency.
+
+- The findings validate Variant B as the most effective treatment, offering a straightforward recommendation to adopt Variant B across campaigns.
+
+- Nr. Orders per Customer Viz
+  
 - This chart shows the dominance of single-purchase customers, which suggests low repeat purchase rates
 
 
 ![Nr. Orders per Customer](https://github.com/user-attachments/assets/8a2627b8-65f8-49cd-aa54-08d71a6871b2)
 
-### Geographic Sales Distribution
+### Category 4 Customer & Product Performance:
 
-- Beleza_saude appears in the top 5 categories in every state, indicating consistently strong performance
-  and broad customer demand across the country.
-- Cama_mesa_banho appears in the top 5 in only 8 out of 27 states, which suggests a more region-specific demand.
-Addtionally, it is purchased mainly in the highest-revenue states, showing stronger demand in larger and more developed markets.
-- Sao Paulo (SP) is the state with the highest overall revenue. It also shows high category diversification,
-meaning its sales are distributed across many different product categories rather than concentrated in a few.
-- Consumer preferences are relatively consistent across states, but purchasing power and market size vary significantly.
-- States with the highest revenue also tend to have the largest number of sellers. In contrast, low-revenue states usually have very few sellers or in some cases, none, indicating that seller scarcity directly limits sales potential.
+- Loyalty tiers: Bronze tier customers contribute the majority of revenue, This hierarchy is inverted compared to the expected loyalty structure, suggesting opportunities for upsell and improvements in the loyalty program improvements.
+
+- Customer segments: Acquisition channel analysis shows that Organic and Paid Search channels bring in the most profitable customers, while Referral customers generate lower revenue, raising efficiency concerns about referral strategies.
+
+- Product categories: Electronics stand as the highest revenue driver, supported by their high AOV. In contrast, Grocery is the lowest performing category with the lowest AOV as well. The tendency shows a clear pattern:the lower the AOV, the lower the revenue contribution
+
+- Margin risks: Discount analysis reveals that no product categories depend heavily on discounts to sell. 
+
+- Higher discount levels correlate with lower revenue. One reason may be that discounted transactions are less common compared to full‑price purchases. 
+This imbalance means the effectiveness of discounts cannot be fairly evaluated, as most revenue comes from non‑discounted sales.
 
 Sales Performance by State (to consult state details and accurate specific information please enter into the dashboard)
 
