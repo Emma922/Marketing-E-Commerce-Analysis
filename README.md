@@ -49,11 +49,7 @@ Key insights include:
 
 -Targeting all customers yields stronger average uplift than narrow segments, showing broad campaigns can be impactful
 
--Affiliate and Paid Search campaigns combine strong uplift with high revenue, making them the most profitable channels
-
 -Variant B performs best, with a conversion rate of 44% compared to 37% (Variant A) and 33% (Control)
-
--Organic and Paid Search channels bring in the most profitable customers
 
 -Bronze-tier customers contribute the majority of revenue, highlighting upsell and loyalty program opportunities
 
