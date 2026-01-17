@@ -1,0 +1,70 @@
+--========================================================================================================================
+/* Category 4 Customer & Product Performance:
+Assessment of customer segments, loyalty tiers, and product-level results to highlight revenue drivers and margin risks. */
+--========================================================================================================================
+
+--Revenue by Loyalty Tier
+SELECT  
+    c.loyalty_tier,
+    SUM(t.gross_revenue) AS Revenue,
+    COUNT(DISTINCT c.customer_id) AS Customers
+FROM customers c
+LEFT JOIN transactions t
+    ON c.customer_id = t.customer_id
+GROUP BY c.loyalty_tier
+ORDER BY Revenue DESC;
+
+--Revenue by Customer Segment
+
+SELECT 
+    c.acquisition_channel,
+    SUM(t.gross_revenue) AS Revenue,
+    COUNT(DISTINCT c.customer_id) AS Customers
+FROM customers c
+LEFT JOIN transactions t
+    ON c.customer_id = t.customer_id
+GROUP BY c.acquisition_channel
+ORDER BY Revenue DESC;
+
+--Product-Level Performance
+
+SELECT 
+    p.category,
+    SUM(t.gross_revenue) AS Revenue,
+    COUNT(DISTINCT t.transaction_id) AS Orders,
+    ROUND(AVG(t.gross_revenue),2) AS AvgOrderValue
+FROM products p
+JOIN transactions t
+    ON p.product_id = t.product_id
+GROUP BY p.category
+ORDER BY Revenue DESC;
+
+-- Margin Risk (Discount Impact by Product Category)
+SELECT 
+    p.category,
+    t.discount_applied,
+    SUM(t.gross_revenue) AS Revenue,
+    ROUND(AVG(t.gross_revenue),2) AS AvgOrderValue
+FROM products p
+JOIN transactions t
+    ON p.product_id = t.product_id
+GROUP BY p.category, t.discount_applied
+ORDER BY Revenue DESC;
+
+/*
+Insights
+
+Loyalty tiers: Bronze tier customers contribute the majority of revenue, This hierarchy is inverted compared to the expected loyalty structure, suggesting opportunities for upsell and improvements in the loyalty program improvements.
+
+Customer segments: Acquisition channel analysis shows that Organic and Paid Search channels bring in the most profitable customers, while Referral customers generate lower revenue, raising efficiency concerns about referral strategies.
+
+Product categories: Electronics stand as the highest revenue driver, supported by their high AOV. In contrast, Grocery is the lowest performing category with the lowest AOV as well. The tendency shows a clear pattern:the lower the AOV, the lower the revenue contribution
+
+Margin risks: Discount analysis reveals that no product categories depend heavily on discounts to sell. 
+Higher discount levels correlate with lower revenue. One reason may be that discounted transactions are less common compared to full‑price purchases. 
+This imbalance means the effectiveness of discounts cannot be fairly evaluated, as most revenue comes from non‑discounted sales.
+
+
+
+
+
