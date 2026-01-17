@@ -89,8 +89,7 @@ Paid Search is the second performer with 68%
 - Segments with lower user-based conversion rates implicitly represent higher abandonment after the add-to-cart stage
 
 
-![Customer Loyalty Snapshot](https://github.com/user-attachments/assets/a202a70e-f7f4-4bed-b4e2-0de7d446c750)
-
+![Funnel Chart](https://github.com/user-attachments/assets/ff220519-ae38-4e22-afaa-96503b556aa8)
 
 
 ### Category 2 Campaign Performance
