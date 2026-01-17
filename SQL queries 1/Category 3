@@ -1,0 +1,63 @@
+--========================================================================================================================
+/* Category 3 A/B Testing Outcomes:
+Descriptive comparison of control vs. treatment groups to assess conversion, AOV differences, and segment-level uplift. */
+--========================================================================================================================
+
+-- Conversion Rate by Experiment Group
+
+SELECT 
+    experiment_group,
+    ROUND(SUM(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0 END) * 1.0 /
+          NULLIF(SUM(CASE WHEN event_type = 'add_to_cart' THEN 1 ELSE 0 END),0) * 100,2) AS ConversionRate_Percent
+FROM events
+GROUP BY experiment_group
+ORDER BY ConversionRate_Percent DESC;
+
+-- AOV by Experiment Group
+
+SELECT 
+    e.experiment_group,
+    ROUND(AVG(t.gross_revenue),2) AS AvgOrderValue
+FROM events e
+JOIN transactions t 
+    ON e.customer_id = t.customer_id
+GROUP BY e.experiment_group
+ORDER BY AvgOrderValue DESC;
+
+-- Expected Uplift by Experiment Group
+
+SELECT 
+    e.experiment_group,
+    ROUND(AVG(c.expected_uplift),3) AS AvgExpectedUplift
+FROM campaigns c
+LEFT JOIN [events ] e
+ON c.campaign_id = e.campaign_id
+GROUP BY e.experiment_group
+ORDER BY AvgExpectedUplift DESC;
+
+-- Segment-Level Uplift
+
+SELECT 
+    e.experiment_group,
+    c.loyalty_tier,
+    ROUND(AVG(t.gross_revenue),2) AS AvgOrderValue,
+    ROUND(AVG(campaigns.expected_uplift),3) AS AvgExpectedUplift
+FROM events e
+JOIN transactions t 
+    ON e.customer_id = t.customer_id
+JOIN customers c 
+    ON t.customer_id = c.customer_id
+JOIN campaigns 
+    ON t.campaign_id = campaigns.campaign_id
+GROUP BY e.experiment_group, c.loyalty_tier
+ORDER BY AvgExpectedUplift DESC;
+
+/*
+Insights:
+
+Variant B is the clear winner, with a conversion rate of 44% compared to 37% (Variant A) and 33% (Control).
+
+AOV, expected uplift, and segment-level uplift remained equal, meaning the experiment�s impact was limited to conversion efficiency.
+
+The findings validate Variant B as the most effective treatment, offering a straightforward recommendation to adopt Variant B across campaigns.
+*/
